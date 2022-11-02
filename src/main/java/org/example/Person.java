@@ -1,18 +1,20 @@
 package org.example;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component("personBean")
 public class Person {
-    @Autowired
+//    @Autowired
+//    @Qualifier("catBean")
     Pet pet;
 
-//    @Autowired
-//    public Person(Pet pet) {
-//        System.out.println("--- Бин personBean создан ---");
-//        this.pet = pet;
-//    }
+    @Autowired
+    public Person(@Qualifier("dogBean")Pet pet) {
+        System.out.println("--- Бин personBean создан ---");
+        this.pet = pet;
+    }
 
 
 //    public Person() {
@@ -23,7 +25,9 @@ public class Person {
         System.out.println("Пойдем домой");
         pet.say();
     }
+
 //    @Autowired
+//    @Qualifier("dogBean")
     public void setPet(Pet pet) {
         this.pet = pet;
     }
