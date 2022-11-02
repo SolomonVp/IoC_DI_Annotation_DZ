@@ -7,14 +7,25 @@ import org.springframework.stereotype.Component;
 public class Person {
     Pet pet;
 
-    @Autowired
-    public Person(Pet pet) {
-        System.out.println("--- Бин personBean создан ---");
-        this.pet = pet;
-    }
+//    @Autowired
+//    public Person(Pet pet) {
+//        System.out.println("--- Бин personBean создан ---");
+//        this.pet = pet;
+//    }
+
+
+//    public Person() {
+//        System.out.println("--- Бин personBean создан ---");
+//    }
 
     public void goHome() {
         System.out.println("Пойдем домой");
         pet.say();
     }
+    @Autowired
+    public void setPet(Pet pet) {
+        this.pet = pet;
+    }
+
+
 }
