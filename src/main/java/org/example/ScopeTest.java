@@ -7,11 +7,16 @@ public class ScopeTest {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 
         Dog myDog = context.getBean("dogBean", Dog.class);
-        Dog yourDog = context.getBean("dogBean", Dog.class);
 
-        System.out.println("Ссылается на один и тот же объект? " + (myDog==yourDog));
+        myDog.say();
 
-        System.out.println(myDog);
-        System.out.println(yourDog);
+//        Dog yourDog = context.getBean("dogBean", Dog.class);
+//
+//        System.out.println("Ссылается на один и тот же объект? " + (myDog==yourDog));
+//
+//        System.out.println(myDog);
+//        System.out.println(yourDog);
+
+        context.close();
     }
 }
