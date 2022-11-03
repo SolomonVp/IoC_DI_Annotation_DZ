@@ -10,9 +10,9 @@ public class Person {
     //    @Autowired
 //    @Qualifier("catBean")
     Pet pet;
-    //    @Value("${person.name}")
+        @Value("${person.name}")
     private String name;
-    //    @Value("${person.age}")
+        @Value("${person.age}")
     private int age;
 
 //    @Autowired
